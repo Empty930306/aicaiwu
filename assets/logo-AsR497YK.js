@@ -1,0 +1,1 @@
+var e=`/aicaiwu/logo.svg`;export{e as t};
