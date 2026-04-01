@@ -1,0 +1,3 @@
+function e(e,t,n=`export.csv`){if(!e||!e.length){console.error(`No data to export`);return}let r=Object.values(t),i=Object.keys(t),a=e.map(e=>i.map(t=>{let n=e[t]??``;return typeof n==`string`&&(n=n.replace(/"/g,`""`),(n.includes(`,`)||n.includes(`
+`))&&(n=`"${n}"`)),n}).join(`,`)),o=`﻿`+[r.join(`,`),...a].join(`
+`),s=new Blob([o],{type:`text/csv;charset=utf-8;`}),c=URL.createObjectURL(s),l=document.createElement(`a`);l.setAttribute(`href`,c),l.setAttribute(`download`,n.endsWith(`.csv`)?n:`${n}.csv`),l.style.visibility=`hidden`,document.body.appendChild(l),l.click(),document.body.removeChild(l),URL.revokeObjectURL(c)}export{e as t};
